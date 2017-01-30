@@ -12,6 +12,7 @@ Checkout the example by running `npm start`.
 ## Usage 
 
 Importing
+
 `
  import Listing from 'react-listing';
 `
