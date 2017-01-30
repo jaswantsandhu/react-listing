@@ -1,0 +1,4 @@
+{
+    "only": ["src", "test"],
+    "presets": ["react", "es2015", "stage-0"]
+}
