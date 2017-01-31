@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
+import GUID from 'guid';
 
 export default class Datalist extends Component {
 
@@ -47,19 +48,20 @@ export default class Datalist extends Component {
 
     createList = () => {
 
-        let dataList = this.manipulateDataList(this.dataList)
+        let dataList = this.manipulateDataList(this.dataList);
 
         return <ul className="react-listing list">
             {
                 _.map(dataList, (item, index) => {
-                return <li key={item[this.keyName]} className={this.cssClasses(item, index, dataList.length)}>{this.listItemTemplate(item)}</li>
+                let key = this.keyName ? item[this.keyName] : GUID.create().value;
+                return <li key={key} className={this.cssClasses(item, index, dataList.length)}>{this.listItemTemplate(item)}</li>
                 })
             }
         </ul>
     }
 
     render() {
-        if (!this.keyName || !this.listItemTemplate || !this.dataList) {
+        if (!this.listItemTemplate || !this.dataList) {
             console.warn("Required props are not supplied please check the component props.");
             return <ul className="react-listing error-list"></ul>
         }

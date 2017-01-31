@@ -23,4 +23,4 @@ const sort = (item) => {
 
 const limit = 1;
 
-ReactDOM.render( <Listing items={listingData} sort={sort} keyName={"name"} item={listItem} limit={limit}/>, document.getElementById('listing'));
+ReactDOM.render( <Listing items={listingData} sort={sort} item={listItem} limit={limit}/>, document.getElementById('listing'));

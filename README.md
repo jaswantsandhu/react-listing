@@ -12,11 +12,12 @@ Checkout the example by running `npm start`.
 * Framework Independent (can be used with react or react-redux applications).
 * CSS classes.
 * Limit
+* `key` property using GUID or using object key name using string input.
+
 
 ## Upcoming Features
 * Infinite list.
 * Datalist from promise.
-* Remove keyName.
 * Paging
 * Filter
 

@@ -1,6 +1,6 @@
 {
     "name": "react-listing",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "Simple react listing component.",
     "main": "dist/index.js",
     "scripts": {
@@ -37,6 +37,7 @@
         "babel-preset-react": "^6.22.0",
         "babel-preset-stage-0": "^6.22.0",
         "express": "^4.14.1",
+        "guid": "0.0.12",
         "lodash": "^4.17.4",
         "react": "^15.4.2",
         "react-addons-test-utils": "^15.4.2",
