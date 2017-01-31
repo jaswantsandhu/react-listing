@@ -10,9 +10,10 @@ Checkout the example by running `npm start`.
 * Sorting using lodash sortBy.
 * Stateless
 * Framework Independent (can be used with react or react-redux applications).
+* CSS classes.
+* Limit
 
 ## Upcoming Features
-* CSS classes.
 * Infinite list.
 * Datalist from promise.
 * Remove keyName.
@@ -21,7 +22,7 @@ Checkout the example by running `npm start`.
 
 ## Installation
 
-`npm install react-listing`
+`npm install --save react-listing`
 
 ## Usage 
 
@@ -34,33 +35,29 @@ Importing
 JSX 
 
 `
-  <Listing items={<DATA | ARRAY>} keyName="KEYNAME" item={ITEM | COMPONENT}/>
-`
-
-Example 
-
-`
   <Listing items={listingData} keyName={"name"} item={listItem}/>
 `
 
 
 ## Component Properties
 
-### items
+### items | Array
 
 List of items. 
 
-### item 
+### item | Component
 
 Component for each item in the list
 
-
-### keyName
+### keyName | String
 
 Unique key in data set to help react identify component in the list.
 
-### sort 
+### sort | Function
 
 Handler for lodash's `sortBy` function. 
+
+### Limit | Number
+Limit the number of items to shown.
 
 
