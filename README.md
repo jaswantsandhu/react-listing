@@ -57,7 +57,7 @@ Unique key in data set to help react identify component in the list.
 
 Handler for lodash's `sortBy` function. 
 
-### Limit | Number
+### limit | Number
 Limit the number of items to shown.
 
 
