@@ -5,7 +5,7 @@ import Listing from '../src';
 const listingData = [
     {
         name : "ABC",
-        age : "12"
+        age : "22"
     },
     {
         name : "XYZ",
@@ -17,4 +17,8 @@ const listItem = (item) => {
     return <span>{item.name}, {item.age}</span>
 }
 
-ReactDOM.render( <Listing items={listingData} keyName={"name"} item={listItem}/>, document.getElementById('listing'));
+const sort = (item) => {
+    return item.age;
+}
+
+ReactDOM.render( <Listing items={listingData} sort={sort} keyName={"name"} item={listItem}/>, document.getElementById('listing'));
