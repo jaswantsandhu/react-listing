@@ -11,7 +11,7 @@ export default class Datalist extends Component {
         ? this.props.limit
         : parseInt(this.props.limit, 10);
 
-    cssClasses = (item, index) => {
+    cssClasses = (item, index, maxItems) => {
 
         let systemClasses = [];
 
@@ -19,7 +19,7 @@ export default class Datalist extends Component {
             systemClasses.push("first")
         }
 
-        if (index === this.dataList.length - 1) {
+        if (index === maxItems - 1) {
             systemClasses.push("last")
         }
 
@@ -46,10 +46,13 @@ export default class Datalist extends Component {
     }
 
     createList = () => {
+
+        let dataList = this.manipulateDataList(this.dataList)
+
         return <ul className="react-listing list">
             {
-                _.map(this.manipulateDataList(this.dataList), (item, index) => {
-                return <li key={item[this.keyName]} className={this.cssClasses(item, index)}>{this.listItemTemplate(item)}</li>
+                _.map(dataList, (item, index) => {
+                return <li key={item[this.keyName]} className={this.cssClasses(item, index, dataList.length)}>{this.listItemTemplate(item)}</li>
                 })
             }
         </ul>
