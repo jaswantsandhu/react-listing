@@ -21,4 +21,6 @@ const sort = (item) => {
     return item.age;
 }
 
-ReactDOM.render( <Listing items={listingData} sort={sort} keyName={"name"} item={listItem}/>, document.getElementById('listing'));
+const limit = 1;
+
+ReactDOM.render( <Listing items={listingData} sort={sort} keyName={"name"} item={listItem} limit={limit}/>, document.getElementById('listing'));
