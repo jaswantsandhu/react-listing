@@ -35,9 +35,11 @@ Importing
 
 JSX 
 
-`
-  <Listing items={listingData} keyName={"name"} item={listItem}/>
-`
+`<Listing items={listingData} item={listItem}/>`
+
+or 
+
+`<Listing items={listingData}><div>Content comes here.</div></listing>`
 
 
 ## Component Properties

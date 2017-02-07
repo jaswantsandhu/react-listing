@@ -1,6 +1,6 @@
 {
     "name": "react-listing",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "Simple react listing component.",
     "main": "dist/index.js",
     "scripts": {
@@ -8,7 +8,8 @@
         "clean": "rimraf dist",
         "build:webpack": "NODE_ENV=production webpack --config config/webpack.production.js",
         "build": "npm run clean && npm run build:webpack",
-        "start": "node config/server.js"
+        "start": "node config/server.js",
+        "prepublish" : "npm run build"
     },
     "repository": {
         "type": "git",

@@ -4,14 +4,6 @@ import GUID from 'guid';
 
 export default class Datalist extends Component {
 
-    dataList = this.props.items;
-    keyName = this.props.keyName;
-    listItemTemplate = this.props.item;
-    sort = this.props.sort;
-    limit = typeof this.props.limit === "number"
-        ? this.props.limit
-        : parseInt(this.props.limit, 10);
-
     cssClasses = (item, index, maxItems) => {
 
         let systemClasses = [];
@@ -35,12 +27,16 @@ export default class Datalist extends Component {
 
     manipulateDataList = (list) => {
 
-        if (_.isFunction(this.sort)) {
-            list = _.sortBy(list, this.sort);
+        const limit = typeof this.props.limit === "number"
+        ? this.props.limit
+        : parseInt(this.props.limit, 10);
+
+        if (_.isFunction(this.props.sort)) {
+            list = _.sortBy(list, this.props.sort);
         }
 
-        if (typeof this.limit === "number" && this.limit > 0 && this.limit < list.length) {
-            list = list.splice(0, this.limit);
+        if (typeof limit === "number" && limit > 0 && limit < list.length) {
+            list = list.splice(0, limit);
         }
 
         return list;
@@ -48,20 +44,20 @@ export default class Datalist extends Component {
 
     createList = () => {
 
-        let dataList = this.manipulateDataList(this.dataList);
+        let dataList = this.manipulateDataList(this.props.items);
 
         return <ul className="react-listing list">
             {
                 _.map(dataList, (item, index) => {
-                let key = this.keyName ? item[this.keyName] : GUID.create().value;
-                return <li key={key} className={this.cssClasses(item, index, dataList.length)}>{this.listItemTemplate(item)}</li>
+                let key = this.props.keyName ? item[this.props.keyName] : GUID.create().value;
+                return <li key={key} className={this.cssClasses(item, index, dataList.length)}>{this.props.item(item)}</li>
                 })
             }
         </ul>
     }
 
     render() {
-        if (!this.listItemTemplate || !this.dataList) {
+        if (!this.props.item || !this.props.items) {
             console.warn("Required props are not supplied please check the component props.");
             return <ul className="react-listing error-list"></ul>
         }
