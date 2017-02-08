@@ -7,7 +7,7 @@ Checkout the example by running `npm start`.
 
 ## Features 
 * Component for list item.
-* Sorting using lodash sortBy.
+* Sorting and ordering using lodash.
 * Stateless
 * Framework Independent (can be used with react or react-redux applications).
 * CSS classes.
@@ -37,10 +37,6 @@ JSX
 
 `<Listing items={listingData} item={listItem}/>`
 
-or 
-
-`<Listing items={listingData}><div>Content comes here.</div></listing>`
-
 
 ## Component Properties
 
@@ -59,6 +55,10 @@ Unique key in data set to help react identify component in the list.
 ### sort | Function
 
 Handler for lodash's `sortBy` function. 
+
+### order | Function
+
+Handler for lodash's `orderBy` function.
 
 ### limit | Number
 Limit the number of items to shown.
