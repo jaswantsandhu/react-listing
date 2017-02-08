@@ -35,8 +35,22 @@ export default class Datalist extends Component {
             list = _.sortBy(list, this.props.sort);
         }
 
-        if (_.isFunction(this.props.order)) {
-            list = _.orderBy.call(_, list, this.props.order[0], this.props.order[1]);
+        if (_.isArray(this.props.order)) {
+
+            if(_.isFunction(this.props.sort))
+                {
+                    console.warn("Props for order are available.")
+                }
+
+            if(_.isArray(this.props.order[0]) && _.isArray(this.props.order[1]))
+                {
+                    list = _.orderBy.call(_, list, this.props.order[0], this.props.order[1]);
+                }
+            else
+                {
+                    console.warn("Configuration required for order property is correct please check the docs for correct list of configuration required")
+                }
+            
         }
 
         if (typeof limit === "number" && limit > 0 && limit < list.length) {
