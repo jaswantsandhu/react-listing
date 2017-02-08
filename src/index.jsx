@@ -36,7 +36,7 @@ export default class Datalist extends Component {
         }
 
         if (_.isFunction(this.props.order)) {
-            list = _.orderBy(list, this.props.order);
+            list = _.orderBy.call(_, list, this.props.order[0], this.props.order[1]);
         }
 
         if (typeof limit === "number" && limit > 0 && limit < list.length) {
