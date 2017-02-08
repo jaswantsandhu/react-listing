@@ -1,6 +1,6 @@
 {
     "name": "react-listing",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "Simple react listing component.",
     "main": "dist/index.js",
     "scripts": {
