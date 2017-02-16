@@ -63,4 +63,7 @@ Handler for lodash's `orderBy` function.
 ### limit | Number
 Limit the number of items to shown.
 
+### itemClassName | String
+Classes for a listing item.
+
 

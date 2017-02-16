@@ -22,7 +22,7 @@ export default class Datalist extends Component {
             systemClasses.push("odd");
         }
 
-        return "list-item " + systemClasses.join(" ");
+        return "list-item " + (this.props.itemClassName ? this.props.itemClassName + " " : "") + systemClasses.join(" ");
     }
 
     manipulateDataList = (list) => {
@@ -64,7 +64,7 @@ export default class Datalist extends Component {
 
         let dataList = this.manipulateDataList(this.props.items);
 
-        return <ul className="react-listing list">
+        return <ul className={"react-listing list" + (this.props.className ? " " + this.props.className : "")}>
             {
                 _.map(dataList, (item, index) => {
                 let key = this.props.keyName ? item[this.props.keyName] : GUID.create().value;

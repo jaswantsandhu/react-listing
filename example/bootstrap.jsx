@@ -23,4 +23,4 @@ const sort = (item) => {
 
 const limit = 1;
 
-ReactDOM.render( <Listing items={listingData} item={listItem} order={[["age"], ["asc"]]}/>, document.getElementById('listing'));
+ReactDOM.render( <Listing className={'listing'} itemClassName={`col`} items={listingData} item={listItem} order={[["age"], ["asc"]]}/>, document.getElementById('listing'));
